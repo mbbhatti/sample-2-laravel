@@ -79,5 +79,3 @@ Use this command for all files tests
 ## Run project
 Use this command on run project without docker
 - php artisan serve
-
-npm run watch
