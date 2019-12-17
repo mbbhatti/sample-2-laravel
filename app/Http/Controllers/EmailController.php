@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use App\Services\MailJetEmail;
 use App\Services\MailGunEmail;
-use App\Log;
+use App\Repositories\LogRepository;
 
 class EmailController extends Controller
 {
@@ -33,7 +33,7 @@ class EmailController extends Controller
      * @param  $log Log object
      * @return void
      */
-    public function __construct(Log $log)
+    public function __construct(LogRepository $log)
     {
         $this->log = $log;
     }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Log;
+use App\Repositories\LogRepository;
 
 class LogController extends Controller
 {
@@ -30,7 +30,7 @@ class LogController extends Controller
      * @param  $log Log object
      * @return void
      */
-    public function __construct(Log $log)
+    public function __construct(LogRepository $log)
     {
         $this->log = $log;
     }
@@ -52,7 +52,7 @@ class LogController extends Controller
      */
     public function list()
     {                 
-        $data = $this->log->getAll();
+        $data = $this->log->getLogs();
 
         return response()->json($data, Response::HTTP_OK);
     }
